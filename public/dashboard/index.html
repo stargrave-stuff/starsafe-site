@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/c7a23483c5.js" crossorigin="anonymous"></script>
+    <title>StarSafe | Report and Blacklist</title>
+</head>
+<body data-theme="dark">
+<header class="main-header">
+    <h1>StarSafe</h1>
+        <section class="nav-links">
+        <button id="menu-open-btn" class="menu-btn" aria-label="Open Menu">
+        <i class="fas fa-bars"></i> 
+    </button>
+ 
+    <nav id="mobile-menu">
+        <button id="menu-close-btn" class="menu-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i> 
+        </button>
+        <a href="#report">Report</a>
+        <a href="#blacklist">Blacklist</a>
+        <a href="#about">About</a>
+    </nav>
+    </section>
+</header>
+<main>
+    <div id="about"></div>
+    <h1>Welcome to StarSafe</h1>
+    <h3>About StarSafe</h3>
+    <p>Add StarSafe description here.</p>
+    <br>
+    <section class="search-user">
+        <h2>Search User</h2>
+        <input type="text" id="username-input" placeholder="Enter Blacklisted User">
+        <button id="search-btn">Search</button>
+    </section>
+    <br>
+    <div id="report">
+        <h2>Report a User</h2>
+        <form id="report-form">
+            <label for="report-user">User ID:</label>
+            <input type="text" id="report-user" name="report-user" placeholder="Enter User ID" required>
+            <br>
+            <label for="report-reason">Reason:</label>
+            <input type="text" id="report-reason" name="report-reason" placeholder="Enter Reason" required>
+            <br><br>
+            <button type="submit">Submit Report</button>
+        </form>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+<footer class="menu-footer">
+    <p>&copy; StarSafe. All rights reserved.</p>
+    <button id="theme-toggle" aria-label="Toggle Theme">
+        <i id="theme-icon" class="fas fa-sun"></i> 
+    </button>
+    <div id="user-panel">
+        <p>Loading user panel...</p>
+    </div>
+</footer>
+</html>

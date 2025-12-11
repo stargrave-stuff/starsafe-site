@@ -1,0 +1,102 @@
+@import url(./root.css);
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+main {
+    /* Set main to a flexible container */
+    display: flex;
+    
+    /* Stack the content vertically (default is row) */
+    flex-direction: column; 
+    
+    /* Center the items horizontally */
+    align-items: center; 
+    
+    /* Optional: Set a minimum height for visibility */
+    min-height: 80vh; 
+    
+    /* Optional: Add spacing/padding */
+    padding: 20px;
+
+    /* set font size */
+    font-size: larger;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+/* border-bottom: 4px solid var(--text-color); */
+}
+
+#theme-toggle {
+    /* Set the positioning context: Fixed relative to the viewport */
+    position: fixed; 
+    
+    /* Position it from the bottom and right edges of the screen */
+    bottom: 20px; /* Adjust this value for desired spacing from the bottom */
+    right: 20px; /* Adjust this value for desired spacing from the right */
+    
+    /* Ensure it stays above other content, including the mobile menu (which is z-index: 99) */
+    z-index: 100; 
+    
+    /* Ensure it is visible globally (desktop and mobile) */
+    display: block !important; 
+    
+    /* Add some basic styling for visibility/look */
+    padding: 10px;
+    border-radius: 50%; /* Makes it circular */
+    /* You would add your specific background/color styles here */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Optional: Add a smooth transition */
+#theme-toggle:hover {
+    cursor: pointer;
+    /* Add hover effects like a slight scale or shadow */
+}
+
+.menu-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--background-color);
+}
+
+/* --- DESKTOP (Large Screens - Min-width: 768px) --- */
+
+/* On large screens, show the nav links in a row and hide the mobile buttons */
+@media (min-width: 768px) {
+
+}
+
+/* --- MOBILE (Small Screens - Max-width: 767px) --- */
+@media (max-width: 767px) {
+
+/* Show the theme toggle button */
+    #theme-toggle {
+        display: none; 
+    }
+}
+
+.login-button {
+    background-color: var(--menu-bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
