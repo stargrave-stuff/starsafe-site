@@ -22,6 +22,9 @@ const OAUTH_SCOPES = 'identify email';
 // MIDDLEWARE & CONFIGURATION
 // ====================================================
 
+// REQUIRED when running behind a proxy like Render/Heroku
+app.set('trust proxy', 1); 
+
 // 1. Session Setup for user authentication state
 app.use(
     session({
@@ -29,7 +32,10 @@ app.use(
         resave: false,
         saveUninitialized: false,
         cookie: {
-            maxAge: 1000 * 60 * 60 * 24 // 24 hours (1 day)
+            maxAge: 1000 * 60 * 60 * 24, // 24 hours (1 day)
+            // *** REQUIRED FOR HTTPS/PRODUCTION HOSTING (Render/Heroku) ***
+            secure: true, 
+            sameSite: 'none'
         }
     })
 );
